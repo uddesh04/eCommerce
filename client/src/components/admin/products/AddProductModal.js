@@ -40,7 +40,7 @@ const AddProductDetail = ({ categories }) => {
     e.target.reset();
 
     if (!fData.pImage) {
-      setFdata({ ...fData, error: "Please upload at least 2 image" });
+      setFdata({ ...fData, error: "Please upload at least 2 images" });
       setTimeout(() => {
         setFdata({ ...fData, error: false });
       }, 2000);
@@ -288,7 +288,7 @@ const AddProductDetail = ({ categories }) => {
                 />
               </div>
               <div className="w-1/2 flex flex-col space-y-1">
-                <label htmlFor="offer">Product Offfer (%) *</label>
+                <label htmlFor="offer">Product Offer (%) *</label>
                 <input
                   value={fData.pOffer}
                   onChange={(e) =>

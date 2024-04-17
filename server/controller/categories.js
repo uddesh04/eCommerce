@@ -24,7 +24,7 @@ class Category {
         if (err) {
           console.log(err);
         }
-        return res.json({ error: "All filled must be required" });
+        return res.json({ error: "All required fields must be filled" });
       });
     } else {
       cName = toTitleCase(cName);
@@ -59,7 +59,7 @@ class Category {
   async postEditCategory(req, res) {
     let { cId, cDescription, cStatus } = req.body;
     if (!cId || !cDescription || !cStatus) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "All required fields must be filled" });
     }
     try {
       let editCategory = categoryModel.findByIdAndUpdate(cId, {
@@ -79,7 +79,7 @@ class Category {
   async getDeleteCategory(req, res) {
     let { cId } = req.body;
     if (!cId) {
-      return res.json({ error: "All filled must be required" });
+      return res.json({ error: "All required fields must be filled" });
     } else {
       try {
         let deletedCategoryFile = await categoryModel.findById(cId);

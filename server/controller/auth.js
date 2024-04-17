@@ -47,7 +47,7 @@ class Auth {
         if ((password.length > 255) | (password.length < 8)) {
           error = {
             ...error,
-            password: "Password must be 8 charecter",
+            password: "Password must be 8 characters long",
             name: "",
             email: "",
           };
@@ -77,7 +77,7 @@ class Auth {
                 .save()
                 .then((data) => {
                   return res.json({
-                    success: "Account create successfully. Please login",
+                    success: "Account creates successfully. Please login",
                   });
                 })
                 .catch((err) => {
